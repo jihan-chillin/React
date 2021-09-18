@@ -1,0 +1,41 @@
+<html>
+    <head>
+<!--        스크립트 태그 추가하기 -->
+        <!--
+        1. 리액트 불러오기
+        2. 리액트 DOM 불러오기
+        -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> <!-- 배포할 땐, development대신 production으로 변경해야 함 -->
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    </head>
+
+    <body>
+    <div id="root"> <!--결과 : <div id="root"><button onclick="onclick">Like</button></div>-->
+
+        <script>
+            const e = React.createElement;
+
+            class LikeButton extends React.Component{
+                constructor(props) {
+                    // component가 실행될 때 가장 먼저 실행되는 코드
+                    super(props);
+                    this.state ={
+                        liked : false, // 좋아요를 누르기 전 기본값
+                    };
+                }
+                render(){
+                    // Likebutton이 렌더링 되었을 때, 어떻게 화면에 나오게 할 건지에 대한 메소드를 정의하는 곳
+                    // return e('button', {onClick : ()=> {console.log('clicked')}, type:'submit' }, 'like') // <button>Like<button>을 만들겠다는 react문법
+                    return e('button', {onClick : ()=> {this.setState({liked :true})}, typec:'submit' }, 'like') // <button>Like<button>을 만들겠다는 react문법
+             
+                    }
+                }
+
+        </script>
+        <script>
+            // ReactDom이란
+            ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+        </script>
+    </div>
+    </body>
+</html>
