@@ -10,6 +10,7 @@
         <div id="root"></div>
 
         <script type="text/babel">
+            // 1. Class 방법
             class GuGudan extends  React.Component{
                 constructor(props){
                     super(props);
@@ -21,6 +22,16 @@
                         result :'',
                     }
                 }
+
+                // 2. Hooks 방법
+                // const GuGudan = () =>{
+                //     // Hooks는 Class방식과 다르게 객체로 묵지않음.
+                //     const [first, setFirst] = React.useState(Math.ceil(Math.random()*9));
+                //     const [second, setSecond] = React.useState(Math.ceil(Math.random()*9));
+                //     const [vale, setValue] = React.useState(''); // 초기값 넣어주면 됨.
+                //     const [result, setResult] = React.useState('');
+                //     return <div>{first} {second} </div>
+                // }
 
                 onsubmit = (e)=>{ 
                     e.preventDefault(); // 서브밋의 기본 기능인 제출후 리프레시를 취소하고, 다음 함수를 실행
