@@ -26,10 +26,16 @@
                     }
 
                     // 훨씬 깔끔하네 메소드 작성하는 과정에서 
+                    // setState를 비동기로 실행함 => Hooks로 사용할 경우엔, 렌더링 한 번에 함
+                    // 원래는 렌더링을 setState 쓸 때마다 사용함.
                     const onsubmitForm = (e)=>{ 
+
                     e.preventDefault(); // 서브밋의 기본 기능인 제출후 리프레시를 취소하고, 다음 함수를 실행
-                    if(parseInt(this.state.value) === this.state.first * this.state.second){
-                     setResult(value + ' 정답!'),
+                    if(parseInt(value) === first * second){
+                     setResult((prevResult)=>{
+                         return '정답' + value
+                     })
+                    
                      setFirst(Math.ceil(Math.random()*9)),
                      setSecond(Math.ceil(Math.random()*9)),
                      setValue(''),
