@@ -22,16 +22,31 @@
                     }
                 }
 
-                onsubmit = (e)=>{
-                    e.preventDefault();
+                onsubmit = (e)=>{ 
+                    e.preventDefault(); // 서브밋의 기본 기능인 제출후 리프레시를 취소하고, 다음 함수를 실행
                     if(parseInt(this.state.value) === this.state.first * this.state.second){
-                        this.setState({
+                        
+                        // this.setState({
                 
-                            first : Math.ceil(Math.random()*9),
-                            second : Math.ceil(Math.random()*9),
-                            value : '',
-                            result : this.state.first * this.state.second + '정답'
+                        //     first : Math.ceil(Math.random()*9),
+                        //     second : Math.ceil(Math.random()*9),
+                        //     value : '',
+                        //     result : this.state.first * this.state.second + ' 정답!'
+                        // });
+
+                        // 이렇게 메소드를 작성하면, result값이 너무 길어짐
+                        // this.state.어쩌구 : 현재상태 / result : 미래상태
+                        // 따라서 현상태를 매개변수로 넣어 미래에 반영해주는 메소드를 작성해야함.
+                        // setState에 prevState라는 매개변수 넣어주기 ▼
+                        this.setState((prevState) => {
+                            return {
+                                result : prevState.value + ' 정답!',
+                                first : Math.ceil(Math.random()*9),
+                                second : Math.ceil(Math.random()*9),
+                                value : ''
+                            }
                         });
+                        this.input.focus();
                     }
                     else{
                         this.setState({
@@ -49,15 +64,16 @@
 
                 render(){
                     return (
-                        <div>
+                        // <React.Fragment> 
+                            <>
                             <div>{this.state.first} 곱하기 {this.state.second}</div>
                        
                             <form onSubmit={this.onsubmit}>
-                                <input type ="number" value={this.state.value} onChange = {this.onChange}/>
-                                <button>입력!</button>
+                                <input ref={(c)=>{this.input = c;}} type ="number" value={this.state.value} onChange = {this.onChange}/>
+                                <button type='submit'>입력!</button>
                             </form>
                             <div>{this.state.result}</div>
-                         </div>
+                            </>
                     )
                 }
             }
