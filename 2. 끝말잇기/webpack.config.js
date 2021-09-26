@@ -1,9 +1,9 @@
-const path = require('patj');
+const path = require('path');
 
 module.exports = {
-    name : 'word-relay-setting',
+    name : 'word-relay-setting', // 불필요하지만 webpack 설정을 위한 이름
     mode : 'development', // 지금은 개발용, 실서비스 할 땐 production
-    devtools : 'eval',
+    devtools : 'eval', // build 빠름 / rebuild가 가장 바름 ( 최대 성능을 갖춘 개발 빌드를 위한 옵션 )
     resolve : {
         // extensions 배열 안에 있는 확장자들은 이제 따로 안적어줘도 인식을 해줌
         extensions : ['.js','jsx','css']
