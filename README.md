@@ -1,3 +1,6 @@
 ## React 독학
 
-##### [ 공부 필기 ] (https://tame-robin-33f.notion.site/React-2738cddad0024b4489468749c2813d59)
+#### 제로초의 웹 게임을 만들며 배우는 React
+#### Deep Dive 자바스크립트 책 5회독 목표 :white_medium_square::white_medium_square::white_medium_square::white_medium_square::white_medium_square:
+#### :notebook: 1회독ing
+
