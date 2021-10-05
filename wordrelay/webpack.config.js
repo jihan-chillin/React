@@ -24,11 +24,4 @@ module.exports = {
         filename : 'app.js',
         publicPath : '/dist',
     },
-
-    // module : {
-    //     loader : 'babel',
-    //     query : {
-    //         presets : ['react', 'es20cle15']
-    //     }
-    // }
 }
