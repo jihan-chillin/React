@@ -14,7 +14,7 @@ module.exports = {
         // 중요! ★
         // client.jsx에서 webpack을 이미 불러오기 때문에 app 배열안에 , 
         // 'WordRelay.jsx' 적을 필요 없음ㄴ
-        app : ['./client']
+        app : './client',
     }, 
 
     // output : 출력 ★
