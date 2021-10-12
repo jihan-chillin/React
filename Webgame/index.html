@@ -1,44 +1,10 @@
 <html>
     <head>
-       <!--        스크립트 태그 추가하기 -->
-        <!--
-        1. 리액트 불러오기
-        2. 리액트 DOM 불러오기
-        -->
-        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> <!-- 배포할 땐, development대신 production으로 변경해야 함 -->
-        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <meta charset="UTF-8"/>
+        <title>끝말잇기</title>
     </head>
     <body>
         <div id="root"></div>
-        <script type="text/babel">
-            const e = React.createElement;
-            class LikeButton extends React.Component {
-                constructor(props){
-                    super(props);
-                    this.state = {
-                        liked : false
-                    }
-                }
-                render(){
-                    // return e('button', {onClick: () => {this.setState({ liked : true })}, type :'submit'}, 
-                    // this.state.liked === true ? 'Liked' : 'unlike');
-                    return <button
-                        type="submit" 
-                        onClick={()=> {this.setState({liked : true})}}
-                        >Like</button>
-                }
-            }
-        </script>
-        
-        <script type="text/babel">
-            // 실제 웹에다 렌더링하겠다는 말
-            ReactDOM.render(
-                <div>
-                    <LikeButton/>
-                    <LikeButton/>
-                </div>, 
-                document.querySelector('#root'));
-        </script>
+        <script src="./dist/app.js"></script>
     </body>
 </html>
