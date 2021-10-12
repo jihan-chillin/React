@@ -30,9 +30,15 @@
                 }
             }
         </script>
+        
         <script type="text/babel">
             // 실제 웹에다 렌더링하겠다는 말
-            ReactDOM.render(<LikeButton/>, document.querySelector('#root'));
+            ReactDOM.render(
+                <div>
+                    <LikeButton/>
+                    <LikeButton/>
+                </div>, 
+                document.querySelector('#root'));
         </script>
     </body>
 </html>
