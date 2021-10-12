@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (6:16)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| const WordRelay = require('./WordRelay');\\n| \\n> ReactDOM.render(<WordRelay/>, document.querySelector('#root'));\");\n\n//# sourceURL=webpack://lecture/./client.jsx?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: Unknown option: .prests. Check out https://babeljs.io/docs/en/babel-core/#options for more information about options.\\n    at throwUnknownError (D:\\\\react\\\\Webgame\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\validation\\\\options.js:133:27)\\n    at D:\\\\react\\\\Webgame\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\validation\\\\options.js:118:5\\n    at Array.forEach (<anonymous>)\\n    at validateNested (D:\\\\react\\\\Webgame\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\validation\\\\options.js:94:21)\\n    at validate (D:\\\\react\\\\Webgame\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\validation\\\\options.js:85:10)\\n    at loadPrivatePartialConfig (D:\\\\react\\\\Webgame\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\partial.js:80:50)\\n    at loadPrivatePartialConfig.next (<anonymous>)\\n    at D:\\\\react\\\\Webgame\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\partial.js:149:25\\n    at Generator.next (<anonymous>)\\n    at step (D:\\\\react\\\\Webgame\\\\node_modules\\\\gensync\\\\index.js:261:32)\");\n\n//# sourceURL=webpack://lecture/./client.jsx?");
 
 /***/ })
 
