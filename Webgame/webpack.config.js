@@ -6,7 +6,11 @@ module.exports = {
     mode : 'development', // 개발용, production : 실서비스
     devtool : 'eval', // 빠르게
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        fallback : {
+            "path" : false,
+            "util" : require.resolve('util/')
+        }
       },
 
     entry : { // 웹팩의 입력 -> 하나의 script파일로 합쳐야하는 client.jsx와 WordRelay.jsx가 입력파일이 됨.
@@ -19,8 +23,10 @@ module.exports = {
             test: /\.jsx?$/,
             loader : 'babel-loader', 
             options : { // 바벨의 옵션을 작성하는 곳
-                presets : ['@babel/preset-env', '@babel/preset-react']
-            }
+                presets : ['@babel/preset-env', '@babel/preset-react'],
+                plugins : ['@babel/plugin-proposal-class-properties'],
+                compact : false,
+            },
         }]
     },
 
