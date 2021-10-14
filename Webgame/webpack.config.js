@@ -9,7 +9,19 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         fallback : {
             "path" : false,
-            "util" : require.resolve('util/')
+            "util" : require.resolve('util/'),
+            "zlib" : false, 
+            "crypto" : false,
+            "stream" : false,
+            "buffer": false,
+            "https": false,
+            "http": false,
+            "url": false,
+            "vm": false,
+            "querystring": false,
+            "os": false,
+            "assert": false,
+            "constants": false,
         }
       },
 
@@ -29,6 +41,9 @@ module.exports = {
             },
         }]
     },
+    // node: {
+    //     fs: 'empty'
+    //   },
 
     output : { // 웹팩의 출력 -> 두 jsx 파일을 하나로 연결해주는 app.js가 output에 해당됨 
         path : path.join(__dirname, 'dist'),
