@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "webpack"
   },
+  "browser" : {
+    "child_process" : false
+  },
   "author": "jihan",
   "license": "MIT",
   "dependencies": {

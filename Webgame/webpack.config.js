@@ -22,6 +22,7 @@ module.exports = {
             "os": false,
             "assert": false,
             "constants": false,
+            "fs" : false
         }
       },
 
@@ -41,10 +42,7 @@ module.exports = {
             },
         }]
     },
-    // node: {
-    //     fs: 'empty'
-    //   },
-
+    
     output : { // 웹팩의 출력 -> 두 jsx 파일을 하나로 연결해주는 app.js가 output에 해당됨 
         path : path.join(__dirname, 'dist'),
         filename : 'app.js',
