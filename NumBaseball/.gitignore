@@ -1,0 +1,3 @@
+# 특정 파일만 ignore
+NumBaseball/package.json
+NumBaseball/package-lock.json
