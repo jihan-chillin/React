@@ -1,17 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
-class Test extends Component {
+class Test extends PureComponent {
     state = {
         counte : 0,
     };
-
-    shouldComponentUpdate(nextProps, nextState, nextContext){
-        // 어떤 경우에 다시 렌더링을 해줘야 하는지 명시해주는 곳
-        if(this.state.counter !== nextState.counter){
-            return true;
-        }
-        return false
-    }
 
     onClick = () => {
         this.setState({});
