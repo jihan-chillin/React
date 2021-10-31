@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Try from './Try';
 
 function getNumbers(){
@@ -55,14 +55,16 @@ const onSubmitForm = (e) =>{
         console.log(value);
     };
 
-const onChangeInput = (e) =>{
-        setValue(e.target.value);
-    }
+const onChangeInput = useCallback((e)=> setValue(e.target.value),[]);
     return(
         <>
             <h1>{result}</h1>
-            <form onSubmit={this.onSubmitForm}>
-                <input maxLength={4} value={value} onChange={this.onChangeInput}/>
+            <form onSubmit={onSubmitForm}>
+                <input
+                maxLength={4}
+                value={value}
+                onChange={onChangeInput}
+                />
             </form>
             <div>시도 : {tries.length}</div>
             <ul>
