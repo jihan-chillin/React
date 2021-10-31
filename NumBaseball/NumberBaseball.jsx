@@ -1,4 +1,4 @@
-import React, { useCallback, useState, memo } from 'react';
+import React, { useCallback, useState, memo, useRef } from 'react';
 import Try from './Try';
 
 function getNumbers(){
@@ -16,6 +16,7 @@ const NumberBaseball = memo(() =>{
     const [result, setResult] = useState('');
     const [answer, setAnswer] = useState('');
     const [tries, setTries] = useState('');
+    const inputEl = useRef(null);
 
 const onSubmitForm = (e) =>{
         e.prevendDefault();
@@ -29,6 +30,7 @@ const onSubmitForm = (e) =>{
             setValue('');
             setAnswer(getNumbers());
             setTries([]);
+            inputEl.current.focus();
         }else{ // 답이 틀렸으면, 
             const anwerArray = value.split('').map((v)=> parseInt(v));
             let strike = 0;
@@ -39,6 +41,7 @@ const onSubmitForm = (e) =>{
                 setValue('');
                 setAnswer(getNumbers());
                 setTries([]);
+                inputEl.current.focus();
             }else{ // 10 번 이내로 틀렸을 때, 
                 for(let i = 0 ; i< 4 ; i ++){
                     if(answerArray[i] === answer[i]){
@@ -61,6 +64,7 @@ const onChangeInput = useCallback((e)=> setValue(e.target.value),[]);
             <h1>{result}</h1>
             <form onSubmit={onSubmitForm}>
                 <input
+                ref = {inputEl}
                 maxLength={4}
                 value={value}
                 onChange={onChangeInput}
