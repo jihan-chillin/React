@@ -3,10 +3,17 @@ import React, {PureComponent} from 'react';
 class Test extends PureComponent {
     state = {
         counte : 0,
+        string : 'hello', 
+        number : 1, 
+        boolean : true,
+        object : {},
+        array : []
     };
 
     onClick = () => {
-        this.setState({});
+        this.setState({
+            array : [...this.state.array, 1],
+        });
     }
 
     render() {
