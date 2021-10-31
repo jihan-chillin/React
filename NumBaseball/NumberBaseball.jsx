@@ -22,12 +22,13 @@ class NumberBaseball extends Component{
     };
 
     onSubmitForm = (e) =>{
+        const {result, value, tries, answer} = this.state;
         e.prevendDefault();
         // 입력한 값과 정답이 같으면
-        if(this.state.value === this.state.answer.join('')){
+        if(value === answer.join('')){
             this.setState({
                 result : '홈런!',
-                tries : [...this.state.tries, {try : this.state.value, result : '홈런!'}],
+                tries : [...tries, {try : value, result : '홈런!'}],
             })
             alert('게임을 다시 시작합니다.');
             this.setState({
@@ -37,10 +38,10 @@ class NumberBaseball extends Component{
             });
 
         }else{ // 답이 틀렸으면, 
-            const anwerArray = this.state.value.split('').map((v)=> parseInt(v));
+            const anwerArray = value.split('').map((v)=> parseInt(v));
             let strike = 0;
             let ball = 0;
-            if(this.state.tries.length >= 9){ // 10번 이상 틀렸을 때, 
+            if(tries.length >= 9){ // 10번 이상 틀렸을 때, 
                 this.setState({
                     result : `10번 넘게 틀려서 실패! 답은 ${answer.join('.')}였습니다.`,
                 });
@@ -52,39 +53,41 @@ class NumberBaseball extends Component{
                 });
             }else{ // 10 번 이내로 틀렸을 때, 
                 for(let i = 0 ; i< 4 ; i ++){
-                    if(answerArray[i] === this.state.answer[i]){
+                    if(answerArray[i] === answer[i]){
                         strike += 1;
-                    }else if(this.state.answer.includes(answerArray[i])){
+                    }else if(answer.includes(answerArray[i])){
                         ball += 1;
                     }
                 }
                 this.setState({
-                    tries : [...this.state.tries, {try : this.state.value, result : `${strike}, ${ball}`}],
+                    tries : [...tries, {try : value, result : `${strike}, ${ball}`}],
                     value : '',
                 })
             }
         }
-        console.log(this.state.value);
+        console.log(value);
     };
 
     onChangeInput = (e) =>{
-        console.log(this.state.answer);
+        console.log(answer);
         this.setState({
             value : e.target.value,
         })
     }
 
     render(){
+        // 구조분해 
+        const {result, value, tries} = this.state
         return(
             <>
-                <h1>{this.state.result}</h1>
+                <h1>{result}</h1>
                 <form onSubmit={this.onSubmitForm}>
-                    <input maxLength={4} value={this.state.value} onChange={this.onChangeInput}/>
+                    <input maxLength={4} value={value} onChange={this.onChangeInput}/>
                 </form>
-                <div>시도 : {this.state.tries.length}</div>
+                <div>시도 : {tries.length}</div>
                 <ul>
                     {/* 3. key로 반복문 하는 방법 : 객체로 */}
-                    {this.state.tries.map((v, i)=>{
+                    {tries.map((v, i)=>{
                         return(
                          <Try key={`${i + 1}차시도 : `} tryInfo={v} index={i}/>
                         )
