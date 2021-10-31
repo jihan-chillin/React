@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, memo } from 'react';
 import Try from './Try';
 
 function getNumbers(){
@@ -12,7 +12,7 @@ function getNumbers(){
     return array;
 }
 
-const NumberBaseball = () =>{
+const NumberBaseball = memo(() =>{
     const [result, setResult] = useState('');
     const [answer, setAnswer] = useState('');
     const [tries, setTries] = useState('');
@@ -78,5 +78,5 @@ const onChangeInput = useCallback((e)=> setValue(e.target.value),[]);
             </ul>
         </>
     )
-}
+});
 export default NumberBaseball;
