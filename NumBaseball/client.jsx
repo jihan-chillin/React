@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import NumberBaseball from './NumberBaseball';
+import ResponseCheck from './ResponseCheck';
 // import NumberBaseball from './RenderTest';
 
-ReactDOM.render(<NumberBaseball />, document.querySelector('#root'));
+ReactDOM.render(<ResponseCheck />, document.querySelector('#root'));
