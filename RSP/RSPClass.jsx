@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // (setState/props 바뀔때) -> shouldComponentUpdate(true) -> render -> componentDidUpdate
 // 부모가 나를 없앴을 때 -> componentWillUnmount -> 소멸
 
-const rspCoords = {
+const rspCords = {
   바위: '0',
   가위: '-142px',
   보: '-284px',
@@ -17,7 +17,7 @@ const scores = {
 };
 
 const computerChoice = (imgCoord) => {
-  return Object.entries(rspCoords).find(function(v) {
+  return Object.entries(rspCords).find(function(v) {
     return v[1] === imgCoord;
   })[0];
 };
@@ -25,7 +25,7 @@ const computerChoice = (imgCoord) => {
 class RSP extends Component {
   state = {
     result: '',
-    imgCoord: rspCoords.바위,
+    imgCoord: rspCords.바위,
     score: 0,
   };
 
@@ -41,17 +41,17 @@ class RSP extends Component {
 
   changeHand = () => {
     const {imgCoord} = this.state;
-    if (imgCoord === rspCoords.바위) {
+    if (imgCoord === rspCords.바위) {
       this.setState({
-        imgCoord: rspCoords.가위,
+        imgCoord: rspCords.가위,
       });
-    } else if (imgCoord === rspCoords.가위) {
+    } else if (imgCoord === rspCords.가위) {
       this.setState({
-        imgCoord: rspCoords.보,
+        imgCoord: rspCords.보,
       });
-    } else if (imgCoord === rspCoords.보) {
+    } else if (imgCoord === rspCords.보) {
       this.setState({
-        imgCoord: rspCoords.바위,
+        imgCoord: rspCords.바위,
       });
     }
   };

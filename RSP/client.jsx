@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 
 // import ResponseCheck from './ResponseCheck';
 // import NumberBaseball from './RenderTest';
-import RSP from './RSP';
+import RSPHooks from './RSPClass';
 
-ReactDOM.render(<RSP />, document.querySelector('#root'));
+ReactDOM.render(<RSPHooks />, document.querySelector('#root'));
